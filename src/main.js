@@ -1,17 +1,7 @@
-import Person from "./person.js";
+import {
+  decimalToBinary,
+  decimalToBinaryE6,
+} from "./Stack/solving-problems/decimalToBinary";
 
-class Programmer extends Person {
-  constructor(name, age, sex, area) {
-    super(name, age, sex);
-    this.area = area;
-  }
-
-  coding() {
-    return "I'm Typing...";
-  }
-}
-
-const Luiz = new Person("Luiz Gustavo");
-const Gustavo = new Programmer();
-
-console.log(Luiz.name);
+console.log(decimalToBinary(10));
+console.log(decimalToBinaryE6(10));
