@@ -39,3 +39,23 @@ export const decimalToBinaryE6 = (decNumber = 0) => {
 
   return binaryString;
 };
+
+export function myDecimalToBinary(decimalNum) {
+  const decimalNumbersStack = new Stack();
+  let number = decimalNum;
+  let rem;
+  let result = "";
+
+  while (number !== 0) {
+    rem = Math.floor(number % 2);
+    number = Math.floor(number / 2);
+
+    decimalNumbersStack.push(rem);
+  }
+
+  while (!decimalNumbersStack.isEmpty()) {
+    result += decimalNumbersStack.pop();
+  }
+
+  return result;
+}
