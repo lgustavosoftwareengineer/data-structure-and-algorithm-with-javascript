@@ -1,9 +1,10 @@
-import {
-  decimalToBinary,
-  decimalToBinaryE6,
-  myDecimalToBinary,
-} from "./Stack/solving-problems/decimalToBinary";
+import Deque from "./Queue/deque";
+import { palindrome } from "./Queue/solving-problems/palindrom";
 
-console.log(decimalToBinary(10));
-console.log(decimalToBinaryE6(10));
-console.log(myDecimalToBinary(10));
+//console.log(palindrome("ana"));
+
+const deque = new Deque();
+deque.addBack(1);
+console.log(deque.removeBack());
+
+console.log(deque.toString());
