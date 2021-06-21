@@ -11,19 +11,17 @@ export default class Queue {
   }
   dequeue() {
     if (this.isEmpty()) {
-      return;
+      return undefined;
     }
 
     const result = this.items[this.lowestCount];
     delete this.items[this.lowestCount];
-
     this.lowestCount++;
-    this.count--;
-
     return result;
   }
   peek() {
-    return this.isEmpty && this.items[this.lowestCount];
+    if (this.isEmpty()) return undefined;
+    return this.items[this.lowestCount];
   }
 
   isEmpty() {
@@ -31,7 +29,7 @@ export default class Queue {
   }
 
   size() {
-    return this.count;
+    return this.count - this.lowestCount;
   }
 
   clear() {

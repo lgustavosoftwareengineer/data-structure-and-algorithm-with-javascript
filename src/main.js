@@ -1,10 +1,11 @@
-import Deque from "./Queue/deque";
-import { palindrome } from "./Queue/solving-problems/palindrom";
+import {
+  palindromeRecursive,
+  hotPotato,
+  palindrome,
+} from "./Queue/solving-problems/";
 
-//console.log(palindrome("ana"));
+const names = ["John", "Jack", "Camila", "Ingrid", "Carl"];
+const { eliminated, winner } = hotPotato(names, 7);
 
-const deque = new Deque();
-deque.addBack(1);
-console.log(deque.removeBack());
-
-console.log(deque.toString());
+eliminated.forEach((element) => console.log(`${element} was eliminated`));
+console.log(`the winner is ${winner}`);
