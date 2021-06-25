@@ -1,16 +1,24 @@
-function isPalindrome(text = "") {
-  if (!text) return false;
+function isPalindrome(str = "") {
+  const strLowerCase = str.toLowerCase();
 
-  const textFromLowerCase = text.toLowerCase();
-  const textLen = textFromLowerCase.length;
-  const firstChar = textFromLowerCase[0];
-  const lastChar = textFromLowerCase[textLen - 1];
+  function firstChar(str) {
+    return str[0];
+  }
 
-  // um string menor que 2 o inicio e o final serão a mesma coisa, logo quebra o slice
-  if (textLen < 2) return true;
+  function lastChar(str) {
+    return str[str.length - 1];
+  }
 
-  if (firstChar === lastChar) {
-    return isPalindrome(textFromLowerCase.slice(1, lastChar));
+  function middleChars(str) {
+    return str.slice(1, str.length - 1);
+  }
+
+  if (str.length < 2) {
+    return true;
+  }
+
+  if (firstChar(strLowerCase) === lastChar(strLowerCase)) {
+    return isPalindrome(middleChars(strLowerCase));
   }
 
   return false;
