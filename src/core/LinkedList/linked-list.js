@@ -10,40 +10,32 @@ export default class LinkedList {
 
   push(element) {
     const node = new Node(element);
-    const pushAtFirst = () => {
+    let current;
+    if (this.head == null) {
       this.head = node;
-      this.count++;
-    };
-
-    const pushAtSomewhere = () => {
-      let current = this.head;
-      for (let i = 1; i < this.count; i++) {
+    } else {
+      current = this.head;
+      while (current.next != null) {
         current = current.next;
       }
-
       current.next = node;
-      this.count++;
-    };
-
-    return this.head === undefined ? pushAtFirst() : pushAtSomewhere();
+    }
+    this.count++;
   }
   insert(element, position) {}
   getElementAt(index) {
     if (index >= 0 && index <= this.count) {
       let current = this.head;
-
-      for (let i = 1; i < index; i++) {
+      for (let i = 0; i < index && current != null; i++) {
         current = current.next;
       }
-
       return current;
-    } else {
-      return undefined;
     }
+    return undefined;
   }
   remove(element) {}
   removeAt(index) {
-    if (index >= 0 && index <= this.count) {
+    if (index >= 0 && index < this.count) {
       let current = this.head;
       if (index === 0) {
         this.head = current.next;
