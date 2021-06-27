@@ -26,7 +26,7 @@ export default class LinkedList {
   getElementAt(index) {
     if (index >= 0 && index <= this.count) {
       let current = this.head;
-      for (let i = 0; i < index && current != null; i++) {
+      for (let i = 1; i < index; i++) {
         current = current.next;
       }
       return current;
