@@ -1,2 +1,3 @@
-export { default as Queue } from "./Queue";
-export { default as Stack } from "./Stack";
+export { Queue, Deque } from "./Queue";
+export { Stack, StackWithArray, StackWithPrivate } from "./Stack";
+export { LinkedList } from "./LinkedList";

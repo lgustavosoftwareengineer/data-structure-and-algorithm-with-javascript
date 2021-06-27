@@ -1,5 +1,7 @@
-import { Stack } from "./core/Stack";
-import { Queue } from "./core/Queue";
+import { LinkedList } from "./core";
 
-console.log(new Stack());
-console.log(new Queue());
+const linkedList = new LinkedList();
+linkedList.push(2);
+linkedList.push(3);
+
+console.log(linkedList);
