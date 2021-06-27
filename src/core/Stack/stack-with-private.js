@@ -39,12 +39,3 @@ export default class Stack {
     return items.get(this).toString();
   }
 }
-
-const stack = new Stack();
-stack.push(5);
-stack.push(8);
-stack.push(15);
-
-console.log(stack.isEmpty());
-console.log(stack.size());
-console.log(stack.toString());

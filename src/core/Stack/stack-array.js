@@ -27,11 +27,3 @@ export default class Stack {
     this.items = [];
   }
 }
-
-const stack = new Stack();
-stack.push(5);
-stack.push(8);
-stack.push(15);
-
-console.log(stack.isEmpty());
-console.log(stack.items);
