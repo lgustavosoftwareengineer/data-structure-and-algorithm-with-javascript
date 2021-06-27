@@ -11,11 +11,11 @@ export default class LinkedList {
   push(element) {
     const node = new Node(element);
     let current;
-    if (this.head == null) {
+    if (this.head == undefined) {
       this.head = node;
     } else {
       current = this.head;
-      while (current.next != null) {
+      while (current.next != undefined) {
         current = current.next;
       }
       current.next = node;
