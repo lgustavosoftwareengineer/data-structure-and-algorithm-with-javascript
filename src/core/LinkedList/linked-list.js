@@ -50,7 +50,10 @@ export default class LinkedList {
     }
     return undefined;
   }
-  remove(element) {}
+  remove(element) {
+    const index = this.indexOf(element);
+    return this.removeAt(index);
+  }
   removeAt(index) {
     if (index >= 0 && index < this.count) {
       let current = this.head;
